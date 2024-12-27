@@ -4,8 +4,8 @@ import QUESTIONS from '../questions.js';
 export default function Summary({userAnswers}){
     const skippedAnswers = userAnswers.filter(answer => answer === null);
     const correctAnswers = userAnswers.filter((answer, index) => answer === QUESTIONS[index].answers[0]);
-    const skippedAnswers_ratio = Math.round(skippedAnswers.length / userAnswers.length) * 100;
-    const correctAnswer_ratio = Math.round(correctAnswers.length / userAnswers.length) * 100;
+    const skippedAnswers_ratio = Math.round((skippedAnswers.length / userAnswers.length) * 100);
+    const correctAnswer_ratio = Math.round((correctAnswers.length / userAnswers.length) * 100);
     const wrongAnswer_ratio = 100 - skippedAnswers_ratio - correctAnswer_ratio;
     
     return (
